@@ -32,26 +32,28 @@ export class ExperienceItemComponent implements OnInit {
 
   searchForKeyworks(searchKeyword: String) {
   this.validSkills = [];
-      console.log("keywork " + searchKeyword)
-      this.experience.skills.forEach(
-        (skill) => {
-          console.log(skill);
-          var found = false;
-          if (skill.description.toLocaleLowerCase().includes(searchKeyword.toLocaleLowerCase())){
-            this.validSkills.push(skill);
-          }
-          else {
-            var counter = 0;
-            while (counter < skill.keywords.length && !found){
-              var keyword = skill.keywords[counter];
-              if (keyword.toLocaleLowerCase().includes(searchKeyword.toLocaleLowerCase())){
-                this.validSkills.push(skill);
-                found = true;
+      if (this.experience.name.toLowerCase().includes(searchKeyword.toLocaleLowerCase())) {
+        this.validSkills = this.experience.skills;
+      } else {
+        this.experience.skills.forEach(
+          (skill) => {
+            console.log(skill);
+            var found = false;
+            if (skill.description.toLocaleLowerCase().includes(searchKeyword.toLocaleLowerCase())){
+              this.validSkills.push(skill);
+            } else {
+              var counter = 0;
+              while (counter < skill.keywords.length && !found) {
+                var keyword = skill.keywords[counter];
+                if (keyword.toLocaleLowerCase().includes(searchKeyword.toLocaleLowerCase())){
+                  this.validSkills.push(skill);
+                  found = true;
+                }
+                counter = counter + 1;
               }
-              counter = counter + 1;
             }
           }
-        }
-      );
+        );
+      }
   }
 }
