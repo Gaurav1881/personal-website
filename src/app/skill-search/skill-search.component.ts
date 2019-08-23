@@ -1,5 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ApiService } from '../services/api.service';
+import { UserDataService } from '../services/user-data.service';
+import { Subscription, Subject } from 'rxjs';
+import { Experiences } from '../models/experiences.model';
+import { EventEmitter } from 'protractor';
+import { debounceTime } from 'rxjs/operators';
 
 @Component({
   selector: 'app-skill-search',
@@ -8,10 +13,18 @@ import { ApiService } from '../services/api.service';
 })
 export class SkillSearchComponent implements OnInit {
 
-  constructor(private apiService: ApiService) { }
+  private experienceSubscription: Subscription;
+  private experiencesList: Experiences[]; 
+  private searchBarChanged: Subject<String>;
+
+  constructor(private apiService: ApiService, private userDataService: UserDataService) { 
+    this.searchBarChanged = new Subject<String>();
+  }
 
   ngOnInit() {
     this.apiService.getData();
+    this.experienceSubscription = this.userDataService.getExperienceObserable().subscribe(
+      (experiences: Experiences[]) => this.experiencesList = experiences
+    );
   }
-
 }

@@ -1,6 +1,6 @@
 import { Skills } from "./skills.model";
 
-export class Experiance {
+export class Experience {
     name: String;
     skills: Skills[];
 }

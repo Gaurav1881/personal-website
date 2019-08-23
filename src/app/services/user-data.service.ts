@@ -1,5 +1,5 @@
-import { Injectable } from '@angular/core';
-import { Experiances } from '../models/experiances.model';
+import { Injectable, OnInit } from '@angular/core';
+import { Experiences } from '../models/experiences.model';
 import { Subject } from 'rxjs';
 
 @Injectable({
@@ -7,16 +7,18 @@ import { Subject } from 'rxjs';
 })
 export class UserDataService {
 
-  constructor() { }
-  private experiances: Experiances[];
-  private onObtainExperiances: Subject<Experiances[]>;
+  constructor() { 
+    this.onObtainExperiences = new Subject<Experiences[]>();
+  }
+  private experiences: Experiences[];
+  private onObtainExperiences: Subject<Experiences[]>;
 
-  setExperiances(experiances: Experiances[]){
-    this.experiances = experiances;
-    this.onObtainExperiances.next(this.experiances.slice())
+  setExperiences(experiences: Experiences[]){
+    this.experiences = experiences;
+    this.onObtainExperiences.next(this.experiences.slice())
   }
 
-  getExperianceObserable() {
-    return this.onObtainExperiances;
+  getExperienceObserable() {
+    return this.onObtainExperiences;
   }
 }

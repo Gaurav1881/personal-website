@@ -5,12 +5,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SkillsComponent } from './skills/skills.component';
 import { SkillSearchComponent } from './skill-search/skill-search.component';
+import { ExperienceListComponent } from './skill-search/experience-list/experience-list.component';
+import { ExperienceItemComponent } from './skill-search/experience-item/experience-item.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SkillsComponent,
-    SkillSearchComponent
+    SkillSearchComponent,
+    ExperienceListComponent,
+    ExperienceItemComponent
   ],
   imports: [
     BrowserModule,
