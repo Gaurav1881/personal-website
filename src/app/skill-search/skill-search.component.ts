@@ -3,8 +3,6 @@ import { ApiService } from '../services/api.service';
 import { UserDataService } from '../services/user-data.service';
 import { Subscription, Subject } from 'rxjs';
 import { Experiences } from '../models/experiences.model';
-import { EventEmitter } from 'protractor';
-import { debounceTime } from 'rxjs/operators';
 
 @Component({
   selector: 'app-skill-search',

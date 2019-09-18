@@ -1,6 +1,13 @@
-<div class="card">
+<div class="card" *ngIf="validSkills.length > 0">
   <div class="card-body">
-    <h4 *ngIf="validSkills.length > 0" class="card-title"> {{experience.name}} </h4>
+    <div class="row">
+      <div class="col-md-8">
+          <h5 class="card-title"> <b> {{experience.name}} </b> - {{experience.location}} </h5>
+      </div>
+      <div class="col-md-4" style='text-align: right'>
+          <p class="card-title"> {{experience.date}} </p>
+      </div>
+    </div>
     <hr>
     <li *ngFor="let skill of validSkills"  class="card-text"> {{skill.description}} </li>
   </div>
