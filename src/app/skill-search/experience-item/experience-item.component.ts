@@ -31,13 +31,14 @@ export class ExperienceItemComponent implements OnInit {
   }
 
   searchForKeyworks(searchKeyword: String) {
-  this.validSkills = [];
+    this.validSkills = [];
       if (this.experience.name.toLowerCase().includes(searchKeyword.toLocaleLowerCase())) {
+        this.validSkills = this.experience.skills;
+      } else if(this.experience.position && this.experience.position.toLowerCase().includes(searchKeyword.toLocaleLowerCase())) {
         this.validSkills = this.experience.skills;
       } else {
         this.experience.skills.forEach(
           (skill) => {
-            console.log(skill);
             var found = false;
             if (skill.description.toLocaleLowerCase().includes(searchKeyword.toLocaleLowerCase())){
               this.validSkills.push(skill);

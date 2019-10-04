@@ -2,10 +2,18 @@
   <div class="card-body">
     <div class="row">
       <div class="col-md-8">
-          <h5 class="card-title"> <b> {{experience.name}} </b> - {{experience.location}} </h5>
+          <div class="card-title">
+            <b *ngIf="experience.position"> {{experience.position}}, </b>
+            <b> {{experience.name}} </b> 
+          </div>
       </div>
       <div class="col-md-4" style='text-align: right'>
-          <p class="card-title"> {{experience.date}} </p>
+          <div class="location-subtext"> {{experience.date}} </div>
+      </div>
+    </div>
+    <div class="row card-title">
+      <div class="col-md-12">
+          <div class="location-subtext"> {{experience.location}} </div>
       </div>
     </div>
     <hr>
