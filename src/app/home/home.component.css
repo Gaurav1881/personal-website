@@ -1,8 +1,19 @@
 .home-wrapper {
  height: 100vh;
- background-color: lightgray;
+ width: 100%;
+ margin: 0;
+ background-color: rgb(255, 255, 255);
 }
 
 .right {
+    text-align: center;
     margin: auto;
+}
+
+.left {
+    background-image: url('../../assets/profile.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 60%;
 }
