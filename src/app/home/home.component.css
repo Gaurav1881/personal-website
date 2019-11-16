@@ -17,3 +17,28 @@
     background-repeat: no-repeat;
     min-height: 60%;
 }
+
+@media screen and (min-width: 601px) {
+    .name {
+        font-family: 'Neucha', cursive;
+        font-size: 64px;
+    }
+    i {
+        font-size: 36px;
+        color: black;
+        margin: 0px 30px;
+    }
+}
+  
+/* If the screen size is 600px wide or less, set the font-size of <div> to 30px */
+@media screen and (max-width: 600px) {
+    .name {
+        font-family: 'Neucha', cursive;
+        font-size: 32px;
+    }
+    i {
+        font-size: 24px;
+        color: black;
+        margin: 0px 30px;
+    }
+}
