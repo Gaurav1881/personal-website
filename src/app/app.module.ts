@@ -8,6 +8,7 @@ import { SkillSearchComponent } from './skill-search/skill-search.component';
 import { ExperienceListComponent } from './skill-search/experience-list/experience-list.component';
 import { ExperienceItemComponent } from './skill-search/experience-item/experience-item.component';
 import { HomeComponent } from './home/home.component';
+import { MapComponent } from './map/map.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { HomeComponent } from './home/home.component';
     SkillSearchComponent,
     ExperienceListComponent,
     ExperienceItemComponent,
-    HomeComponent
+    HomeComponent,
+    MapComponent
   ],
   imports: [
     BrowserModule,
