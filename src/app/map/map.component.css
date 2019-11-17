@@ -4,7 +4,11 @@
     margin: 0;
     background-color: rgb(255, 255, 255);
 }
-   
+
+.right-content {
+    margin: auto;
+}
+
 .right {
     font-family: 'Neucha', cursive;
     font-weight: 500;
