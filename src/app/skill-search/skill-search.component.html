@@ -1,7 +1,11 @@
-<div class="col-md-6 offset-md-3">
-  <input class="form-control" placeholder="search for skills, experiances, or keywords" (input)="searchBarChanged.next(searchBar.value)" #searchBar>
-  <div class="list">
-    <app-experience-list *ngFor="let experience of experiencesList" [experiences]="experience"  [events]="searchBarChanged">
-    </app-experience-list>
+<div class="row wrapper">
+  <div class="col-md-6 offset-md-3 search">
+    <input class="form-control" placeholder="search for skills, experiances, or keywords"
+      (input)="searchBarChanged.next(searchBar.value)" #searchBar>
+    <div class="list">
+      <app-experience-list *ngFor="let experience of experiencesList" [experiences]="experience"
+        [events]="searchBarChanged">
+      </app-experience-list>
+    </div>
   </div>
 </div>

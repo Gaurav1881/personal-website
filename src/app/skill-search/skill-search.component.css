@@ -1,3 +1,10 @@
+.wrapper {
+    min-height: 100vh;
+    width: 100%;
+    margin: 0px;
+    background-color: rgb(131, 177, 189);
+}
+
 input {
     margin: 20px 0px;
     border-radius: 50px;
@@ -5,4 +12,8 @@ input {
 
 .list {
     margin: 0px 20px;
+}
+
+.search {
+    background-color: white;
 }

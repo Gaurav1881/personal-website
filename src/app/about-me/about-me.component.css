@@ -1,0 +1,40 @@
+.right {
+    padding: 20px 40px;
+    margin: 0px;
+    background-color: rgb(6, 41, 88);
+    color: white;
+    font-family: 'Neucha', cursive;
+    font-size: 26px;
+}
+
+.left {
+    background-image: url('../../assets/fvv.jpg');
+    background-size: cover;
+    background-position: top left;
+    background-repeat: no-repeat;
+    height: inherit;
+    min-height: 300px;
+    width: 100%;
+}
+
+.heading {
+    text-align: center;
+    font-size: 48px;
+    padding-top: 10px;
+}
+
+.home-wrapper {
+    width: 100%;
+    margin: 0;
+    background-color: rgb(255, 255, 255);
+}
+
+ul {
+    font-size: 24px;
+    padding-right: 10px;
+}
+
+i {
+    color: white;
+    font-size: large;
+}
