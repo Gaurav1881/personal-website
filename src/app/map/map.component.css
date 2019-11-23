@@ -16,6 +16,7 @@
     color: rgb(6, 41, 88);
     background-color: rgb(255, 255, 255);
     padding: 20px;
+    min-height: 50vh;
 }
 
 .list {
