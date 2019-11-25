@@ -38,7 +38,7 @@ input {
 .icons {
     padding: 20px;
     text-align: center;
-    background-color: rgb(86, 177, 180);
+    background-color: rgb(98, 169, 197);
 }
 
 .expand-button {
@@ -49,4 +49,8 @@ input {
 
 .expand-button > i {
     cursor: pointer;
+}
+
+.row [class*='col-'] {
+    transition: all 0.5s ease-in-out;
 }
