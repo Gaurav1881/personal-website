@@ -12,10 +12,11 @@ import { Experiences } from '../models/experiences.model';
 export class SkillSearchComponent implements OnInit {
 
   private experienceSubscription: Subscription;
-  private experiencesList: Experiences[]; 
+  private experiencesList: Experiences[];
   private searchBarChanged: Subject<String>;
+  widescreen = false;
 
-  constructor(private apiService: ApiService, private userDataService: UserDataService) { 
+  constructor(private apiService: ApiService, private userDataService: UserDataService) {
     this.searchBarChanged = new Subject<String>();
   }
 
@@ -24,5 +25,9 @@ export class SkillSearchComponent implements OnInit {
     this.experienceSubscription = this.userDataService.getExperienceObserable().subscribe(
       (experiences: Experiences[]) => this.experiencesList = experiences
     );
+  }
+
+  toggleVisibility() {
+    this.widescreen = !this.widescreen;
   }
 }
