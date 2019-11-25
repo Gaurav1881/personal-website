@@ -2,7 +2,7 @@
   href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
 <div class="row wrapper">
   <div class="search" [ngClass]="{' col-md-8 offset-md-2': widescreen, '  col-md-6': !widescreen}">
-    <div class="expand-button" [ngSwitch]='widescreen'>
+    <div class="expand-button d-none d-md-block" [ngSwitch]='widescreen'>
       <i class="fa fa-expand" aria-hidden="true" (click)="toggleVisibility()" *ngSwitchCase='false'></i>
       <i class="fa fa-compress" aria-hidden="true" (click)="toggleVisibility()" *ngSwitchCase='true'></i>
     </div>

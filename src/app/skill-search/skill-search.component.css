@@ -5,7 +5,7 @@
 }
 
 input {
-    margin-bottom: 15px;
+    margin: 10px 0px;
     border-radius: 50px;
 }
 
@@ -38,12 +38,13 @@ input {
 .icons {
     padding: 20px;
     text-align: center;
-    background-color: rgb(98, 169, 197);
+    background-color: rgb(86, 177, 180);
 }
 
 .expand-button {
     text-align: right;
-    padding: 10px;
+    padding: 10px 10px 0px 0px;
+    margin: 0px;
 }
 
 .expand-button > i {
