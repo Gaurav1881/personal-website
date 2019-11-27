@@ -54,3 +54,14 @@ input {
 .row [class*='col-'] {
     transition: all 0.5s ease-in-out;
 }
+
+#sidebar {
+    /* for the animation */
+    transition: margin 0.3s ease;
+  }
+  
+.collapsed {
+    display: block;
+    /* same width as sidebar */
+    margin-left: calc(-200%/12);
+}
