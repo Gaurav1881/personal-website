@@ -48,7 +48,8 @@
       </app-experience-list>
     </div>
   </div>
-  <div class="icons" [ngClass]="{' col-md-2': widescreen, ' col-md-6': !widescreen}" [ngSwitch]='widescreen'>
+  <div class="icons d-none d-md-block" [ngClass]="{' col-md-2': widescreen, ' col-md-6': !widescreen}"
+    [ngSwitch]='widescreen'>
     <div *ngSwitchCase='false'>
       <div class="card card-body">
         <i class="devicon-bootstrap-plain"></i>
