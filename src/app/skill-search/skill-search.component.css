@@ -65,3 +65,10 @@ input {
     /* same width as sidebar */
     margin-left: calc(-200%/12);
 }
+
+@media (max-width: 992px) {
+    .icons {
+        padding: 0px;
+        text-align: center;
+    }
+}
