@@ -40,6 +40,7 @@ i {
 }
 
 .card {
+    margin-top: 20px;
     color: rgb(6, 41, 88);
     width: 100%;
 }
@@ -59,4 +60,9 @@ i {
 
 .nextButton > button {
     background: transparent;
+    border: none;
+    font-size: 20px;
+    font-weight: 500;
+    color: rgb(6, 41, 88);
+    margin-top: 5px;
 }
