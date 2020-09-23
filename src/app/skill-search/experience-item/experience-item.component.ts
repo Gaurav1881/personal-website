@@ -19,11 +19,11 @@ export class ExperienceItemComponent implements OnInit {
   constructor() {
     this.validSkills = [];
     this.events = new Subject();
-   }
+  }
 
   ngOnInit() {
     this.validSkills = this.experience.skills;
-    this.events.pipe(debounceTime(250)).subscribe(
+    this.events.pipe(debounceTime(100)).subscribe(
       (searchKeyword) => {
         this.searchForKeyworks(searchKeyword)
       }
@@ -32,29 +32,30 @@ export class ExperienceItemComponent implements OnInit {
 
   searchForKeyworks(searchKeyword: String) {
     this.validSkills = [];
-      if (this.experience.name.toLowerCase().includes(searchKeyword.toLocaleLowerCase())) {
-        this.validSkills = this.experience.skills;
-      } else if(this.experience.position && this.experience.position.toLowerCase().includes(searchKeyword.toLocaleLowerCase())) {
-        this.validSkills = this.experience.skills;
-      } else {
-        this.experience.skills.forEach(
-          (skill) => {
-            var found = false;
-            if (skill.description.toLocaleLowerCase().includes(searchKeyword.toLocaleLowerCase())){
-              this.validSkills.push(skill);
-            } else {
-              var counter = 0;
-              while (counter < skill.keywords.length && !found) {
-                var keyword = skill.keywords[counter];
-                if (keyword.toLocaleLowerCase().includes(searchKeyword.toLocaleLowerCase())){
-                  this.validSkills.push(skill);
-                  found = true;
-                }
-                counter = counter + 1;
+    if (this.experience.name.toLowerCase().includes(searchKeyword.toLocaleLowerCase())) {
+      this.validSkills = this.experience.skills;
+    } else if (this.experience.position && this.experience.position.toLowerCase().includes(searchKeyword.toLocaleLowerCase())) {
+      this.validSkills = this.experience.skills;
+    } else {
+      this.experience.skills.forEach(
+        (skill) => {
+          console.log("looping");
+          var found = false;
+          if (skill.description.toLocaleLowerCase().includes(searchKeyword.toLocaleLowerCase())) {
+            this.validSkills.push(skill);
+          } else {
+            var counter = 0;
+            while (counter < skill.keywords.length && !found) {
+              var keyword = skill.keywords[counter];
+              if (keyword.toLocaleLowerCase().includes(searchKeyword.toLocaleLowerCase())) {
+                this.validSkills.push(skill);
+                found = true;
               }
+              counter = counter + 1;
             }
           }
-        );
-      }
+        }
+      );
+    }
   }
 }
