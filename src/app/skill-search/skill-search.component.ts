@@ -11,9 +11,9 @@ import { Experiences } from '../models/experiences.model';
 })
 export class SkillSearchComponent implements OnInit {
 
-  private experienceSubscription: Subscription;
-  private experiencesList: Experiences[];
-  private searchBarChanged: Subject<String>;
+  experienceSubscription: Subscription;
+  experiencesList: Experiences[];
+  searchBarChanged: Subject<String>;
   widescreen = false;
 
   constructor(private apiService: ApiService, private userDataService: UserDataService) {
